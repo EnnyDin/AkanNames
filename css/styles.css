@@ -1,3 +1,6 @@
+.doc {
+    background-color: rgb(161, 253, 253);
+}
 h1 {
     text-align:right
 }
@@ -5,4 +8,7 @@ h1 {
 .jumbotron {
     background-color: #f5f5f5;
     
+}
+.Gha {
+    color: #001172;
 }
