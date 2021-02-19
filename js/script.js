@@ -28,10 +28,16 @@ function getInput(){
 function calculateDay(){
     getInput();
     day= (((century/4)-2*century-1) + ((5*year/4)) + ((26*(month+1)/10)) + date ) % 7;
-    return console.log(day);
-    
+    console.log(day);
+    return (Math.floor(day));
    
     }
+    let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+    let femaleNames = ["Akosua", "Adwoa","Abenaa","Akua","Yaa","Afua","Ama"]
+    
+    
+
 
 
 
