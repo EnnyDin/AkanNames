@@ -45,16 +45,17 @@
          <label>DATE</label>
          <input  type="number" id="date" min="1" max="31">
          <br><br>
-        
-         <input type="Radio" Name="Gender" id ="First" Value="Male">Male
-         <input type="Radio" Name="Gender" id="Second" Value="Female">Female
+
+        <form>
+         <input type="Radio" class="Genders labels"  Name="Gender" id ="First" Value="Male" required>Male
+         <input type="Radio" class="Genders labels"  Name="Gender" id="Second" Value="Female" required>Female
+        </form>
        
          <br><br>
        </form>
-       <button type="submit" onClick="result()";>CALCULATE</button>
+       <a href="#output"<button type="button" name="button" onClick="result()";>CALCULATE</button></a>
         <div>
-          <h4> AKAN: <span id="output"></span>
-          </h4>
+          <h4 id="output"></h4>
         </div>
 
 
