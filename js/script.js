@@ -52,10 +52,10 @@ let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 let femaleNames=["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"]
     
 function checkGender(){
-    var Gen = document.getElementsByName("Gender");
-    if(Gen[0].checked == true){
+    var Gender = document.getElementsByName("Gender");
+    if(Gender[0].checked == true){
         var Gender= "male";
-    }else if(Gen[1].checked == true){
+    }else if(Gender[1].checked == true){
         var Gender = "female";
     }else {
       console.log();
