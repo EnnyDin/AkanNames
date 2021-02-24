@@ -1,10 +1,10 @@
-
+var century, year, month, date, day;
 
 function getInput(){
-    var century = parseInt(document.getElementById("century").value);
-    var year = parseInt(document.getElementById("year").value);
-    var month = parseInt(document.getElementById("month").value);
-    var date = parseInt(document.getElementById("date").value);
+    century = parseInt(document.getElementById("century").value);
+    year = parseInt(document.getElementById("year").value);
+    month = parseInt(document.getElementById("month").value);
+    date = parseInt(document.getElementById("date").value);
 
     
    if (century <15  || century >20){
@@ -25,17 +25,12 @@ function getInput(){
 
    }
 
-    
-function result(){
-    var display = calculateDay();
-    checkGender()
-}
 function calculateDay(){
     getInput();
-    day= ((((century/4)-2*century-1) + ((5*year/4)) + ((26*(month+1)/10)) + date ) % 7) -1;
-   
-    return (Math.floor(day));
+    day= ((((century/4)-2*century-1) + ((5*year/4)) + ((26*(month+1)/10)) + date ) % 7)-1;
     console.log(day);
+    return (Math.floor(day));
+
     if (day<0){
         day = day * -1;
         console.log(day)
@@ -43,33 +38,83 @@ function calculateDay(){
     else if (day>0){
         return day;
     }
+}
+
+function result(){
+     day = calculateDay();
+      checkGender();
+      console.log();
+}
+
+
+let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+let femaleNames=["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"]
+    
+function checkGender(){
+    var Gen = document.getElementsByName("Gender");
+    if(Gen[0].checked == true){
+        var Gender= "male";
+    }else if(Gen[1].checked == true){
+        var Gender = "female";
+    }else {
+      console.log();
     }
-
-    function checkGender(){
-     var male=document.getElementById("First").value
-     var female=document.getElementById("Second").value
-
-     if(male=="Male"){
-     console.log(maleNames[0])
-     }
-     else if (female=="Female"){
-     console.log(femaleNames)
-     }
-
-
-
-    }
-
-    let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-    let femaleNames = ["Akosua", "Adwoa","Abenaa","Akua","Yaa","Afua","Ama"]
-    
-    
-
-
-
-
-    
-
-
-
+      switch(Gender){
+          case Gender= "male":
+                switch(day){
+                  case (0 || -0):
+                    document.getElementById("output").innerHTML = "Your Akan name is " + maleNames[0];
+                    break;
+                  case (1 || -1):
+                    document.getElementById("output").innerHTML = "Your Akan name is " + maleNames[1];
+                    break;
+                  case (2 || -2):
+                    document.getElementById("output").innerHTML = "Your Akan name is " + maleNames[2];
+                    break;
+                  case (3 || -3):
+                    document.getElementById("output").innerHTML = "Your Akan name is "+ maleNames[3];
+                    break;
+                  case (4 || -4):
+                    document.getElementById("output").innerHTML = "Your Akan name is " + maleNames[4];
+                    break;
+                  case (5 || -5):
+                    document.getElementById("output").innerHTML = "Your Akan name is " + maleNames[5];
+                    break;
+                  case (6 || -6):
+                    document.getElementById("output").innerHTML = "Your Akan name is " + maleNames[6];
+                    break;
+            
+                }
+          break;
+          case gender = "female":
+                  switch(day){
+                    case 0 || -0:
+                      document.getElementById("output").innerHTML = "Your Akan name is " + femaleNames[0];
+                      break;
+                    
+                    case 1 || -1:
+                      document.getElementById("output").innerHTML = "Your Akan name is " + femaleNames[1];
+                      break;
+                    
+                    case 2 || -2:
+                      document.getElementById("output").innerHTML = "Your Akan name is " + femaleNames[2];
+                      break;
+                    case 3 || -3:
+                      document.getElementById("output").innerHTML = "Your Akan name is " + femaleNames[3];
+                      break;
+                    case 4 || -4:
+                      document.getElementById("output").innerHTML = "Your Akan name is " + femaleNames[4];
+                      break;
+                    case 5 || -5:
+                      document.getElementById("output").innerHTML = "Your Akan name is " + femaleNames[5];
+                      break;
+                    case 6 || -6:
+                      document.getElementById("output").innerHTML = "Your Akan name is " + femaleNames[6];
+                      break;
+  
+                }
+        
+      }
+  }
+  
